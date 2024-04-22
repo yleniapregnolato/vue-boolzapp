@@ -1,0 +1,86 @@
+/* DESKTOP-FIRST */
+
+/* media query contacts */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        background: none;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .contacts {
+        width: 80px;
+        height: 100vh;
+    }
+
+    .notifications {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .message-contacts {
+        padding: 0;
+    }
+
+    .contacts ul {
+        display: none;
+    }
+
+   #header-contacts .avatar {
+    margin: 0 auto;
+   }
+
+   .name-message, .time {
+    display: none;
+   }
+
+}
+
+@media screen and (max-width: 428px) {
+    .contacts {
+        display: none;
+    }
+
+    .list-icons ul {
+        display: none;
+    }
+}
+
+/* /media query contacts */
+
+/* media quey message */
+
+@media screen and (max-width: 768px) {
+    .message {
+        width: calc(100% - 80px);
+        height: 100vh;
+    }
+
+    .col:nth-child(n) {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 428px) {    
+    .message {
+        width: 100%;
+        font-size: 0.65rem;
+    }
+
+    .col:nth-child(n) {
+        padding: 15px;
+    }
+    .search-footer {
+        width: 90%;
+    }
+
+}
+
+/* /media query message */
