@@ -68,7 +68,7 @@
                                 <img :src="curContact.avatar" alt="avatar">
                                 <div class="name-message">
                                     <h3>{{ curContact.name }}</h3>
-                                    <h4 v-for="curMessage in contacts.messages">{{ curMessage.message }}</h4>
+                                    <h4>{{ curContact.messages[curContact.messages.length - 1].message }}</h4>
                                 </div>
                                 <div class="time">16:15</div>
                             </div>
@@ -97,66 +97,14 @@
                         </header>
                         <div class="columns">
                             <div class="col">
-                                <div class="right-message flex">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, sint totam
-                                        nulla
-                                        neque rerum inventore, esse eius fugit ad velit porro facere quasi quos
-                                        laudantium
-                                        illum qui consectetur necessitatibus dignissimos.
-                                    </p>
+                                <div class="flex" :class="{ 'right-message': curMessage.status == 'sent', 'left-message': curMessage.status == 'received' }" v-for="curMessage in contacts[curIndex].messages" >
+                                    <p>{{ curMessage.message }}</p>
                                     <div class="icon-time">
                                         <i class="fa-solid fa-chevron-down"></i>
                                         <p>16:15</p>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col">
-                                <div class="left-message flex">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat vero totam
-                                        rerum
-                                        fugiat enim quasi obcaecati minus incidunt in, beatae quidem nulla ducimus
-                                        earum?
-                                        Sunt accusantium minus nesciunt cum ullam?
-                                    </p>
-                                    <div class="icon-time">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                        <p>16:15</p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="col">
-                                <div class="right-message flex">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, sint totam
-                                        nulla
-                                        neque rerum inventore, esse eius fugit ad velit porro facere quasi quos
-                                        laudantium
-                                        illum qui consectetur necessitatibus dignissimos.
-                                    </p>
-                                    <div class="icon-time">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                        <p>16:15</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="left-message flex">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat vero totam
-                                        rerum
-                                        fugiat enim quasi obcaecati minus incidunt in, beatae quidem nulla ducimus
-                                        earum?
-                                        Sunt accusantium minus nesciunt cum ullam?
-                                    </p>
-                                    <div class="icon-time">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                        <p>16:15</p>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                         <footer>
                             <div class="message-footer">

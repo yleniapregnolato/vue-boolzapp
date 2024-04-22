@@ -21,6 +21,13 @@ li {
 hr {
    border: 1px solid var(--icons-color);
 }
+
+h4 {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 150px;
+}
 /* common */
 :root {
     --back-ground-color-1: #009688;
