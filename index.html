@@ -64,11 +64,11 @@
                                 placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="message-contacts">
-                            <div class="avatar card flex" v-for="curContact in contacts">
+                            <div class="avatar card flex" v-for="(curContact, index) in contacts">
                                 <img :src="curContact.avatar" alt="avatar">
                                 <div class="name-message">
                                     <h3>{{ curContact.name }}</h3>
-                                    <h4></h4>
+                                    <h4 v-for="curMessage in contacts.messages">{{ curMessage }}</h4>
                                 </div>
                                 <div class="time">16:15</div>
                             </div>
