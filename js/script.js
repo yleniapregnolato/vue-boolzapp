@@ -8,6 +8,10 @@ createApp({
                 message: '',
                 status: 'sent'
             },
+            answer: {
+                message: 'ok',
+                status: 'received'
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -188,7 +192,12 @@ createApp({
 
         addMessage: function() {
             this.contacts[this.curIndex].messages.push({...this.newMessage});
-            this.contacts.newMessage.message = "";
-        }
+            this.newMessage.message = "";
+
+            setTimeout(() => {
+                this.contacts[this.curIndex].messages.push({...this.answer});
+            }, 1000);
+        },
+
     },
 }).mount('#app')
