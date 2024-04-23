@@ -12,6 +12,7 @@ createApp({
                 message: 'ok',
                 status: 'received'
             },
+            search: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -199,5 +200,16 @@ createApp({
             }, 1000);
         },
 
+        searchUser: function() {
+            console.log(this.search);
+            this.contacts.forEach(contact => {
+                if(contact.name.toLowerCase().includes(this.search.toLowerCase())) {
+                    contact.visible= true;
+                } else {
+                    contact.visible= false;
+                }
+                
+            });
+        },
     },
 }).mount('#app')
