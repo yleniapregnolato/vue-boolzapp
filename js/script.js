@@ -4,6 +4,10 @@ createApp({
     data() {
         return {
             curIndex: 0,
+            newMessage: {
+                message: '',
+                status: 'sent'
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -180,6 +184,11 @@ createApp({
         showContact: function(index) {
             this.curIndex = index;
             console.log(this.curIndex);
+        },
+
+        addMessage: function() {
+            this.contacts[this.curIndex].messages.push({...this.newMessage});
+            this.contacts.newMessage.message = "";
         }
-    }
+    },
 }).mount('#app')
